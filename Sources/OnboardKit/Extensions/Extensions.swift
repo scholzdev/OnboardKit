@@ -1,10 +1,3 @@
-//
-//  Extensions.swift
-//  OK
-//
-//  Created by Florian Scholz on 26.11.22.
-//
-
 import SwiftUI
 
 @available(iOS 13.0, *)

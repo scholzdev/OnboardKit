@@ -1,10 +1,3 @@
-//
-//  iPhoneDimensions.swift
-//  OK
-//
-//  Created by Florian Scholz on 26.11.22.
-//
-
 import SwiftUI
 
 struct iPhoneDimensions {

@@ -1,10 +1,3 @@
-//
-//  WelcomeSheet.swift
-//
-//
-//  Created by Jakub Florek on 27/11/2021.
-//
-
 import SwiftUI
  
 @available(iOS 13.0, *)

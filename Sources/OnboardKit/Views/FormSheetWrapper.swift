@@ -1,5 +1,3 @@
-// Source: https://stackoverflow.com/a/68481116
-
 import SwiftUI
 
 @available(iOS 13.0, *)

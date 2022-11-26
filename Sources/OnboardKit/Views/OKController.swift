@@ -1,10 +1,3 @@
-//
-//  WelcomeSheetController.swift
-//
-//
-//  Created by Kevin Romero Peces-Barba on 2/10/22.
-//
-
 import UIKit
 
 @available(iOS 13.0, *)

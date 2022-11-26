@@ -1,10 +1,3 @@
-//
-//  WelcomeSheetPage.swift
-//
-//
-//  Created by Jakub Florek on 27/11/2021.
-//
-
 import SwiftUI
 
 /// A type that describes welcome sheet page's content.
