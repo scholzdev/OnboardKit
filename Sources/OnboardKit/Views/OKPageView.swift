@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 struct OKPageView: View {
     let page: OKPage
     let restPages: [OKPage]
@@ -150,6 +151,7 @@ struct OKPageView: View {
     }
 }
 
+@available(iOS 13.0, *)
 extension HorizontalAlignment {
     enum MidIcons: AlignmentID {
         static func defaultValue(in d: ViewDimensions) -> CGFloat {

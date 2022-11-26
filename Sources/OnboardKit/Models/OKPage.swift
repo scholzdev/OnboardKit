@@ -8,6 +8,7 @@
 import SwiftUI
 
 /// A type that describes welcome sheet page's content.
+@available(iOS 13.0, *)
 public struct OKPage: Identifiable, Decodable {
     private enum CodingKeys : String, CodingKey {
         case title

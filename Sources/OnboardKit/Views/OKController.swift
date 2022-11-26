@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 public class OKController {
     var pages: [OKPage]
     var isSlideToDismissDisabled: Bool

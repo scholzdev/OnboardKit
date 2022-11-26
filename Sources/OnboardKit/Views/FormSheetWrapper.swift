@@ -2,6 +2,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 class ModalUIHostingController: UIHostingController<OKView>, UIPopoverPresentationControllerDelegate {
     var onDismiss: () -> Void
     
@@ -24,6 +25,7 @@ class ModalUIHostingController: UIHostingController<OKView>, UIPopoverPresentati
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) { onDismiss() }
 }
 
+@available(iOS 13.0, *)
 class ModalUIViewController: UIViewController {
     var isSlideToDismissDisabled: Bool?
     var okView: OKView?
@@ -36,19 +38,22 @@ class ModalUIViewController: UIViewController {
     }
 }
 
+@available(iOS 13.0, *)
 struct FormSheet: UIViewControllerRepresentable {
     let show: Bool
     let isSlideToDismissDisabled: Bool
     let okView: OKView
     
-    func makeUIViewController(context: UIViewControllerRepresentableContext<FormSheet>) -> ModalUIViewController {
+  @available(iOS 13.0, *)
+  func makeUIViewController(context: UIViewControllerRepresentableContext<FormSheet>) -> ModalUIViewController {
         let vc = ModalUIViewController()
         vc.okView = okView
         vc.isSlideToDismissDisabled = isSlideToDismissDisabled
         return vc
     }
     
-    func updateUIViewController(_ uiViewController: ModalUIViewController, context: UIViewControllerRepresentableContext<FormSheet>) {
+  @available(iOS 13.0, *)
+  func updateUIViewController(_ uiViewController: ModalUIViewController, context: UIViewControllerRepresentableContext<FormSheet>) {
         if show {
             uiViewController.show()
         } else {
@@ -57,6 +62,7 @@ struct FormSheet: UIViewControllerRepresentable {
     }
 }
 
+@available(iOS 13.0, *)
 extension View {
     func formSheet(isPresented: Bool, isSlideToDismissDisabled: Bool, okView: OKView) -> some View {
         self.background(FormSheet(show: isPresented, isSlideToDismissDisabled: isSlideToDismissDisabled, okView: okView))

@@ -7,6 +7,7 @@
 
 import SwiftUI
  
+@available(iOS 13.0, *)
 struct OK: ViewModifier {
     @Binding var showSheet: Bool
     let pages: [OKPage]
@@ -26,6 +27,7 @@ struct OK: ViewModifier {
     }
 }
 
+@available(iOS 13.0, *)
 public extension View {
     func ok(isPresented showSheet: Binding<Bool>, onDismiss: @escaping () -> Void = {}, isSlideToDismissDisabled: Bool = false, pages: [OKPage]) -> some View {
         modifier(OK(showSheet: showSheet, pages: pages, onDismiss: onDismiss, isSlideToDismissDisabled: isSlideToDismissDisabled))

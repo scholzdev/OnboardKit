@@ -2,6 +2,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 struct OverflowScrollView<Content>: View where Content : View {
     
     @State private var axes: Axis.Set
@@ -40,9 +41,10 @@ struct OverflowScrollView<Content>: View where Content : View {
     }
 }
 
+@available(iOS 13.0.0, *)
 private struct ContentSizeReader: View {
     
-    var body: some View {
+  var body: some View {
         GeometryReader {
             Color.clear
                 .preference(
@@ -53,6 +55,7 @@ private struct ContentSizeReader: View {
     }
 }
 
+@available(iOS 13.0.0, *)
 private struct ContentSizeKey: PreferenceKey {
     static var defaultValue: CGSize { .zero }
     static func reduce(value: inout Value, nextValue: () -> Value) {
@@ -61,6 +64,7 @@ private struct ContentSizeKey: PreferenceKey {
     }
 }
 
+@available(iOS 13.0, *)
 extension ScrollView {
     func scrollOnlyOnOverflow() -> some View {
         OverflowScrollView(scrollView: self)
