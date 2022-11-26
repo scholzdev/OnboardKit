@@ -1,0 +1,33 @@
+//
+//  WelcomeSheet.swift
+//
+//
+//  Created by Jakub Florek on 27/11/2021.
+//
+
+import SwiftUI
+ 
+struct OK: ViewModifier {
+    @Binding var showSheet: Bool
+    let pages: [OKPage]
+    let onDismiss: () -> Void
+    let isSlideToDismissDisabled: Bool
+
+    func body(content: Content) -> some View {
+        content
+            .formSheet(isPresented: showSheet, isSlideToDismissDisabled: isSlideToDismissDisabled, okView: OKView(pages: pages, onDismiss: getOnDismiss()))
+    }
+    
+    func getOnDismiss() -> () -> Void {
+        return {
+            showSheet = false
+            onDismiss()
+        }
+    }
+}
+
+public extension View {
+    func ok(isPresented showSheet: Binding<Bool>, onDismiss: @escaping () -> Void = {}, isSlideToDismissDisabled: Bool = false, pages: [OKPage]) -> some View {
+        modifier(OK(showSheet: showSheet, pages: pages, onDismiss: onDismiss, isSlideToDismissDisabled: isSlideToDismissDisabled))
+    }
+}
