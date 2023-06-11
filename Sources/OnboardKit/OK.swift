@@ -24,5 +24,6 @@ struct OK: ViewModifier {
 public extension View {
     func ok(isPresented showSheet: Binding<Bool>, onDismiss: @escaping () -> Void = {}, isSlideToDismissDisabled: Bool = false, pages: [OKPage]) -> some View {
         modifier(OK(showSheet: showSheet, pages: pages, onDismiss: onDismiss, isSlideToDismissDisabled: isSlideToDismissDisabled))
+         .preferredColorScheme(.dark)
     }
 }
