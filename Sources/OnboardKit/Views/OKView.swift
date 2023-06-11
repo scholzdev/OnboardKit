@@ -12,10 +12,12 @@ struct OKView: View {
                     OKPageView(page: firstPage, restPages: pages.filter({ $0.id != firstPage.id }), onDismiss: onDismiss)
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
+                        .preferredColorScheme(.dark)
                 } else {
                   OKPageView(page: firstPage, restPages: pages.filter({ $0.id != firstPage.id }), onDismiss: onDismiss)
                         .navigationBarTitle(Text(""), displayMode: .inline)
                         .navigationBarHidden(true)
+                        .preferredColorScheme(.dark)
                 }
             }
         }
